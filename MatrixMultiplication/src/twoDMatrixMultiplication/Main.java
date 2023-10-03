@@ -9,9 +9,8 @@ public class Main {
 
 		System.out.println("Enter 1st D and 2nd D length");
          int n=scan.nextInt();
-         int m=scan.nextInt();
-		int arr[][]=new int[n][m];
-		System.out.println("Enter element storing in array1");
+		int arr[][]=new int[n][n];
+		System.out.println("Enter "+(n*n)+" elements storing in array1");
 		for(int i=0;i<=arr.length-1;i++)
 
 		{
@@ -24,9 +23,9 @@ public class Main {
 
 		}
 		}
-		int arr2[][]=new int[n][m];
+		int arr2[][]=new int[n][n];
 		
-		System.out.print("Enter element storing in array1");
+		System.out.println("Enter "+(n*n)+" elements storing in array2");
 		for(int i=0;i<=arr.length-1;i++)
 
 		{
@@ -39,7 +38,8 @@ public class Main {
 
 		}
 		}
-		int arr3[][]=new int[n][m];
+		int arr3[][]=new int[n][n];
+      //Matrix multiplication
 		for(int i=0;i<=arr.length-1;i++)
 
 		{
@@ -47,9 +47,12 @@ public class Main {
 		for(int j=0;j<=arr[i].length-1;j++)
 
 		{
+			for(int k=0;k<=arr[i].length-1;k++) {
+				
+			
+		arr3[i][j]=arr3[i][j]+arr[i][k]*arr2[k][j];
 
-		arr3[i][j]=arr[i][j]*arr2[i][j];
-
+		}
 		}
 		}
 		System.out.println("Array1 Contents are...");
@@ -61,9 +64,10 @@ public class Main {
 
 		{
 
-		System.out.print(arr[i][j]+"  ");
+		System.out.print(arr[i][j]+" | ");
 
 		}
+		System.out.println();
 		}
 		System.out.println();
 		System.out.println("Array2 Contents...");
@@ -75,13 +79,14 @@ public class Main {
 
 		{
 
-		System.out.print(arr2[i][j]+"  ");
+		System.out.println(arr2[i][j]+" | ");
 
 		}
+		System.out.println();
 		}
 		System.out.println();
 		//Multiplication
-		System.out.println("Array3 Contents after addition...");
+		System.out.println("Array3 Contents after matrix multiplication...");
 		for(int i=0;i<=arr.length-1;i++)
 
 		{
@@ -90,9 +95,10 @@ public class Main {
 
 		{
 
-		System.out.print(arr3[i][j]+"  ");
+		System.out.print(arr3[i][j]+"|");
 
 		}
+		System.out.println();
 		}
 		
 	}
